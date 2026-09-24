@@ -18,8 +18,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -236,6 +234,8 @@ fun PresetsScreen(
                     BankListRow(
                         number = bankNumber(index),
                         name = bank.name,
+                        presetAName = presetDisplayName(bank.presetA, libraryPresets, customizations),
+                        presetBName = presetDisplayName(bank.presetB, libraryPresets, customizations),
                         colorA = presetColor(bank.presetA, libraryPresets),
                         colorB = presetColor(bank.presetB, libraryPresets),
                         isLoaded = loaded,
@@ -535,7 +535,6 @@ private fun SlotBadge(slot: Slot) {
 @Composable
 private fun EffectChipsRow(prefix: String? = null) {
     Row(
-        modifier = Modifier.horizontalScroll(rememberScrollState()),
         horizontalArrangement = Arrangement.spacedBy(4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -647,6 +646,8 @@ private fun BankSlotButton(
 private fun BankListRow(
     number: String,
     name: String,
+    presetAName: String,
+    presetBName: String,
     colorA: Color,
     colorB: Color,
     isLoaded: Boolean,
@@ -696,7 +697,23 @@ private fun BankListRow(
                     modifier = Modifier.weight(1f)
                 )
             }
+            Text(
+                text = presetAName,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color.White,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
             EffectChipsRow(prefix = "A:")
+            Text(
+                text = presetBName,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color.White,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
             EffectChipsRow(prefix = "B:")
         }
     }
