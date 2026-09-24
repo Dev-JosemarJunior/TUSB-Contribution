@@ -122,5 +122,7 @@
     <string name="midi_permission_needed">Permissão de Bluetooth é necessária para buscar footswitches MIDI.</string>
     <string name="midi_not_supported">Este aparelho não tem suporte a MIDI.</string>
     <string name="midi_pc_note">Program Change 0–19 sempre carrega o preset 1–20 (compatível com o padrão de fábrica do M-Vave Chocolate).</string>
+    <string name="midi_pc_bank">PC carrega banco</string>
+    <string name="midi_pc_bank_note">Program Change seleciona um banco (PC 0 = banco 01) e grava os presets A e B juntos. Um PC aprendido continua com a ação do mapa.</string>
     <string name="midi_cc_none">—</string>
 </resources>

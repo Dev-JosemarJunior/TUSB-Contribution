@@ -124,5 +124,7 @@
     <string name="midi_permission_needed">Bluetooth permission is required to scan for MIDI footswitches.</string>
     <string name="midi_not_supported">This device does not support MIDI.</string>
     <string name="midi_pc_note">Program Change 0–19 always loads preset 1–20 (matches M-Vave Chocolate factory default).</string>
+    <string name="midi_pc_bank">PC loads bank</string>
+    <string name="midi_pc_bank_note">Program Change selects a bank (PC 0 = bank 01) and writes presets A and B together. A learned PC still runs its mapped action.</string>
     <string name="midi_cc_none">—</string>
 </resources>
